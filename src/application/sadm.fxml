@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="pan1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="710.0" prefWidth="615.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.sadmController2">
+   <children>
+      <Button fx:id="btn" layoutX="221.0" layoutY="50.0" mnemonicParsing="false" onAction="#clickbtn" text="START!" />
+      <TextArea fx:id="txtLog" layoutX="16.0" layoutY="618.0" prefHeight="77.0" prefWidth="583.0" />
+      <TabPane fx:id="tabPan1" layoutX="16.0" layoutY="226.0" prefHeight="368.0" prefWidth="583.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab fx:id="tempTab" onSelectionChanged="#click" text="Temperature Graph">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="339.0" prefWidth="622.0">
+                     <children>
+                        <LineChart fx:id="temGraph" layoutX="62.0" layoutY="20.0" prefHeight="299.0" prefWidth="459.0" title="Temprature from sensors">
+                        <xAxis>
+            				<NumberAxis side="BOTTOM" fx:id="xAxis" />
+          				</xAxis>
+          				<yAxis>
+         				   <NumberAxis fx:id="yAxis" layoutX="10.0" side="LEFT" />
+         				</yAxis>
+                        </LineChart>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab fx:id="humTab" onSelectionChanged="#click1" text="Humidity Graph">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <LineChart fx:id="temGraph1" layoutX="62.0" layoutY="20.0" prefHeight="299.0" prefWidth="459.0" title="Humidity from sensors">
+                           <xAxis>
+            				<NumberAxis side="BOTTOM" fx:id="xAxis1" />
+          				</xAxis>
+          				<yAxis>
+         				   <NumberAxis fx:id="yAxis1" layoutX="10.0" side="LEFT" />
+         				</yAxis>
+                        </LineChart>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+            <Tab fx:id="wtTab" onSelectionChanged="#click2" text="WaterLevel Graph">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="222.0" prefWidth="566.0">
+                     <children>
+                        <LineChart fx:id="temGraph2" layoutX="62.0" layoutY="20.0" prefHeight="299.0" prefWidth="459.0" title="Water level from sensors">
+                           <xAxis>
+            				<NumberAxis side="BOTTOM" fx:id="xAxis2" />
+          				</xAxis>
+          				<yAxis>
+         				   <NumberAxis fx:id="yAxis2" layoutX="10.0" side="LEFT" />
+         				</yAxis>
+                        </LineChart>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab fx:id="preTab" onSelectionChanged="#click3" text="Pressure Graph">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="222.0" prefWidth="566.0">
+                     <children>
+                        <LineChart fx:id="temGraph3" layoutX="62.0" layoutY="20.0" prefHeight="299.0" prefWidth="459.0" title="Pressure from sensors">
+                           <xAxis>
+            				<NumberAxis side="BOTTOM" fx:id="xAxis3" />
+          				</xAxis>
+          				<yAxis>
+         				   <NumberAxis fx:id="yAxis3" layoutX="10.0" side="LEFT" />
+         				</yAxis>
+                        </LineChart>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab fx:id="winTab" onSelectionChanged="#click4" text="Wind Graph">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="222.0" prefWidth="566.0">
+                     <children>
+                        <LineChart fx:id="temGraph4" layoutX="62.0" layoutY="20.0" prefHeight="299.0" prefWidth="459.0" title="Wind speed from sensors">
+                           <xAxis>
+            				<NumberAxis side="BOTTOM" fx:id="xAxis4" />
+          				</xAxis>
+          				<yAxis>
+         				   <NumberAxis fx:id="yAxis4" layoutX="10.0" side="LEFT" />
+         				</yAxis>
+                        </LineChart>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab fx:id="rainTab" onSelectionChanged="#click5" text="Rain Graph">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="222.0" prefWidth="566.0">
+                     <children>
+                        <LineChart fx:id="temGraph5" layoutX="62.0" layoutY="20.0" prefHeight="299.0" prefWidth="459.0" title="Rain precipitation from sensors">
+                           <xAxis>
+            				<NumberAxis side="BOTTOM" fx:id="xAxis5" />
+          				</xAxis>
+          				<yAxis>
+         				   <NumberAxis fx:id="yAxis5" layoutX="10.0" side="LEFT" />
+         				</yAxis>
+                        </LineChart>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+      <Separator fx:id="sepBottom" layoutX="-1.0" layoutY="597.0" prefHeight="3.0" prefWidth="615.0" />
+      <MenuBar fx:id="menuBar" layoutX="-1.0" layoutY="1.0" prefHeight="26.0" prefWidth="615.0">
+        <menus>
+          <Menu fx:id="mbFile" mnemonicParsing="false" text="File">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Close" />
+            </items>
+          </Menu>
+          <Menu fx:id="mbHelp" mnemonicParsing="false" text="Help">
+            <items>
+              <MenuItem mnemonicParsing="false" text="About" />
+            </items>
+          </Menu>
+            <Menu fx:id="mbAbour" mnemonicParsing="false" text="About">
+               <items>
+                  <MenuItem mnemonicParsing="false" text="About" />
+               </items>
+            </Menu>
+        </menus>
+      </MenuBar>
+      <TextField fx:id="locTxt" layoutX="88.0" layoutY="115.0" prefHeight="26.0" prefWidth="194.0" text="NA" />
+      <TextField fx:id="idTxt" layoutX="88.0" layoutY="147.0" prefHeight="26.0" prefWidth="194.0" text="NA" />
+      <TextField fx:id="valueTxt" layoutX="88.0" layoutY="178.0" prefHeight="26.0" prefWidth="194.0" text="NA" />
+      <Label fx:id="locLabel" layoutX="16.0" layoutY="119.0" text="Adressees :" />
+      <Label fx:id="idLabel" layoutX="20.0" layoutY="151.0" text="Agent ID :" />
+      <Label fx:id="valueLabel" layoutX="16.0" layoutY="182.0" text="Live Value :" />
+      <Separator fx:id="sepBottom1" layoutX="-8.0" layoutY="214.0" prefHeight="3.0" prefWidth="626.0" />
+      <Label fx:id="logLabel" layoutX="16.0" layoutY="599.0" text="Log :" />
+      <Pane fx:id="alrtPan" layoutX="305.0" layoutY="31.0" prefHeight="174.0" prefWidth="302.0" style=" -fx-border-color:black; -fx-border-width: 1; -fx-border-style: solid;">
+         <children>
+            <Circle fx:id="alrtCrcl" layoutX="258.0" layoutY="44.0" radius="30.0" stroke="BLACK" strokeType="INSIDE">
+               <fill>
+                  <LinearGradient endX="1.0" endY="1.0">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color red="0.9803921580314636" green="0.8156862854957581" blue="0.027450980618596077" />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color red="1.0" green="1.0" blue="1.0" />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </LinearGradient>
+               </fill>
+            </Circle>
+            <Label fx:id="alrtLabel" layoutX="14.0" layoutY="21.0" text="ALERTS :" textFill="#fc0404">
+               <font>
+                  <Font name="Arial Bold Italic" size="20.0" />
+               </font>
+            </Label>
+            <Label fx:id="phenLabel" layoutX="14.0" layoutY="66.0" text="Type of phenomenon :">
+               <font>
+                  <Font name="System Italic" size="12.0" />
+               </font>
+            </Label>
+            <Label fx:id="lvlLabel" layoutX="14.0" layoutY="95.0" text="Level :">
+               <font>
+                  <Font name="System Italic" size="12.0" />
+               </font>
+            </Label>
+            <Label fx:id="valLabel" layoutX="14.0" layoutY="124.0" text="Validity :">
+               <font>
+                  <Font name="System Italic" size="12.0" />
+               </font>
+            </Label>
+            <Label fx:id="phenRep" layoutX="137.0" layoutY="66.0" text="FLOODS">
+               <font>
+                  <Font name="System Bold Italic" size="12.0" />
+               </font>
+            </Label>
+            <Label fx:id="lvlRep" layoutX="58.0" layoutY="95.0" text="Level 1" textFill="#fad007">
+               <font>
+                  <Font name="System Bold Italic" size="12.0" />
+               </font>
+            </Label>
+            <Label fx:id="valRep" layoutX="72.0" layoutY="124.0" text="Monday 6 January, 2022">
+               <font>
+                  <Font name="System Bold Italic" size="12.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>
